@@ -21,9 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6
 
-      - name: Download devkitPPC r32
+      - name: Download devkitARM r32
         run: |
           wget "https://github.com/Leseratte10/compile-devkitARM-r32/releases/download/2020-02-20/devkitARM-r32-linux_debian-buster.tar.gz"
           tar -xf devkitARM-r32-linux_debian-buster.tar.gz -C /opt
@@ -43,7 +43,7 @@ jobs:
           echo "upload_name=v${{ secrets.VERSION }}-$(git rev-parse --short=7 HEAD)" | tr ' ' '-' >> $GITHUB_ENV
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v5.0.0
+        uses: actions/upload-artifact@v5
         with: 
           name: d2x-${{ env.upload_name }}
           path: build
