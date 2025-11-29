@@ -28,13 +28,11 @@ jobs:
           wget "https://github.com/Leseratte10/compile-devkitARM-r32/releases/download/2020-02-20/devkitARM-r32-linux_debian-buster.tar.gz"
           tar -xf devkitARM-r32-linux_debian-buster.tar.gz -C /opt
           rm devkitARM-r32-linux_debian-buster.tar.gz
-
       - name: Compile stripios
         run: |
           cd stripios_src
           g++ main.cpp -o stripios
           cp stripios ..
-          
         - name: Update Tools
         run: |
          sudo apt update
