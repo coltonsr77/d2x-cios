@@ -34,10 +34,7 @@ jobs:
           cd stripios_src
           g++ main.cpp -o stripios
           cp stripios ..
-        - name: Update Tools
-        run: |
-         sudo apt update
-         sudo apt full-upgrade
+    
       - name: Compile cIOS
         run: |
           sudo apt-get install -y libfl2
