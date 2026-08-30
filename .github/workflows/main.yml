@@ -43,7 +43,7 @@ jobs:
           echo "upload_name=v${{ secrets.VERSION }}-$(git rev-parse --short=7 HEAD)" | tr ' ' '-' >> $GITHUB_ENV
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with: 
           name: d2x-${{ env.upload_name }}
           path: build
